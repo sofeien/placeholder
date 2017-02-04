@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>模拟placeholder</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        *{margin: 0;padding: 0}
+        div#main{
+            width:300px;
+            text-align: center;
+        }
+        .red{
+            color:red;
+        }
+   </style>
+</head>
+
+<body>
+    <input type="text" class="form-control red" value="请输入电话">
+    <script>
+        $(function(){
+            $('input').focus(function(){
+                if($(this).val()=='请输入电话'){
+                    $(this).toggleClass('red');
+                    $(this).val('');
+                }
+            });
+            $('input').blur(function(){
+                if($(this).val().trim()==''){
+                    $(this).toggleClass('red');
+                    $(this).val('请输入电话');
+                }
+            });
+        });
+        
+    </script>
+</body>
+
+</html>
